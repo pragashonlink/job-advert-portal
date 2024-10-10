@@ -34,7 +34,6 @@ This service has the following features,
 - Forgot password
 - Reset password
 - JWK url
-Will support integration with other oAuth providers
 
 #### Technologies
 AWS Cognito
@@ -143,6 +142,12 @@ Notification service responsible for dispatching emails, sms, etc... by respondi
 This application will be hosted on AWS cloud infrastructure. We will host the backend services in K8S cluster (EKS). Using kafka gives us the needed control, security and scalability. We will Istio service mesh that provides a uniform way to connect, secure, control, and observe microservices.
 
 ## 3.1 Deployment Diagram
+
+### 3.1.1 Frontend
+
+![frontend-deployment-diagram](./resources/deployment-diagram-front-end.png)
+
+### 3.1.1 Backend
 
 ![frontend-deployment-diagram](./resources/deployment-diagram-front-end.png)
 
