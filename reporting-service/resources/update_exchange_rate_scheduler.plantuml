@@ -1,0 +1,23 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber 1.1
+
+participant scheduler
+participant "reporting service" as CFS
+participant "currency exchange api" as CEA
+participant "reporting service db" as CFDB
+
+scheduler -> CFS: Scheduled to trigger at 12:01 mid night
+note right
+We run everyday to update the client records to refer to the upto date exchange rate
+end note
+
+CFS -> CFDB: Fetch unique currency codes from the "exchange_rates" table
+    loop through all currency codes
+        CFS -> CEA: Fetch exchange rate for the currency code 
+            return exchange rate
+        CFS -> CFDB: update the "exchange_rates" table with the latest rate
+    end
+
+@enduml

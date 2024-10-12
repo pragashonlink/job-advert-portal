@@ -1,0 +1,32 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber 1.1
+
+participant "backoffice user" as BOU
+participant "backoffice application" as BOA
+participant "commission forecast service" as CFS
+participant "commission forecast db" as CFDB
+
+BOU -> BOA: Access commission forecast report
+BOA -> CFS: Call API to get commission forecast data
+    note right
+    GET /api/commission_forecast?page={pageIndex}
+    end note
+CFS -> CFDB: Sum job specific forecasted earnings and multiply that with clients currency exchange rate
+    return forecast response
+    note right
+    {
+        pageIndex: 1,
+        pageSize: 100,
+        data: [
+            {
+                clientId: 1,
+                name: MAS,
+                pendingCommission: 1250,
+                currencyCode: USD
+            }
+        ]
+    }
+    end note
+@enduml

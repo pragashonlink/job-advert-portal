@@ -1,0 +1,154 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "OpenAPI definition",
+    "version": "v0"
+  },
+  "servers": [
+    {
+      "url": "https://example.com/api",
+      "description": "Generated server url"
+    }
+  ],
+  "paths": {
+    "/v1/api/jobs": {
+      "post": {
+        "tags": [
+          "job-controller"
+        ],
+        "summary": "Create job advert",
+        "operationId": "createJobs",
+        "parameters": [
+          {
+            "name": "X-Api-Key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "createJobRequest",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/CreateJobRequest"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Job advert successfully created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateJobResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApiResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "invalid authentication",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CreateJobRequest": {
+        "required": [
+          "description",
+          "title",
+          "numberOfPositions"
+        ],
+        "type": "object",
+        "properties": {
+          "title": {
+            "maxLength": 100,
+            "minLength": 10,
+            "type": "string",
+            "description": "Role title",
+            "example": "Software Engineer"
+          },
+          "description": {
+            "maxLength": 1000,
+            "minLength": 100,
+            "type": "string",
+            "description": "job description",
+            "example": "<h2>Job Overview:</h2><p>We are looking for a skilled Software Engineer to join our dynamic team. \n The ideal candidate will have a passion for technology and a desire to innovate.</p>\n <h2>Responsibilities:</h2><ul>\n <li>Develop, test, and maintain software applications.</li>\n <li>Collaborate with cross-functional teams to define, design, and ship new features.</li>\n           <li>Write clean, maintainable code and perform code reviews.</li>\n  <li>Troubleshoot and debug applications.</li>\n <li>Stay up-to-date with emerging technologies and industry trends.</li></ul> \n"
+          },
+          "numberOfPositions": {
+            "minimum": 1,
+            "type": "integer",
+            "description": "positions",
+            "format": "int32",
+            "example": 1
+          }
+        },
+        "CreateJobResponse": {
+          "required": [
+            "jobId"
+          ],
+          "type": "object",
+          "properties": {
+            "jobId": {
+              "type": "string"
+            }
+          }
+        },
+        "ErrorApiResponse": {
+          "required": [
+            "errorCode",
+            "errors"
+          ],
+          "type": "object",
+          "properties": {
+            "errorCode": {
+              "type": "string",
+              "enum": [
+                "INVALID_REQUEST",
+                "INVALID_AUTHENTICATION"
+              ]
+            },
+            "errors": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
