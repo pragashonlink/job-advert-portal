@@ -149,7 +149,7 @@ This application will be hosted on AWS cloud infrastructure. We will host the ba
 
 ### 3.1.1 Backend
 
-![frontend-deployment-diagram](./resources/deployment-diagram-front-end.png)
+![frontend-deployment-diagram](./resources/deployment-diagram-backend.png)
 
 ## 3.2 Infrastructure Components
 
