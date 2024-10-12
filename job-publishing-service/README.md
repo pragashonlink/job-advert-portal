@@ -15,4 +15,4 @@ After receiving this event the `JobListingService` will capture the event data a
 
 ### JobPublishedEvent flow
 
-![JobPublished-event-flow](./resources/job_published_event.png)
+![jobpublishing-flow](./resources/job_publishing_flow.png)
