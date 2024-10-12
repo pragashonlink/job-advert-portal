@@ -1,0 +1,25 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber 1.1
+
+participant "job-application-service" as JAS
+participant "reporting-service" as RS
+database kafka
+database Postgresql
+
+JAS -> kafka: Emit ApplicationSubmitted Event
+note right
+{
+    application_reference_id:,
+    job_reference_id:,
+    title:,
+    details:,
+    number_of_positions:,
+    expected_salary:
+}
+end note
+kafka -> RS: Consume ApplicationSubmitted Event
+RS -> Postgresql: Store the data
+
+@enduml

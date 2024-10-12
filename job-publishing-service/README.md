@@ -1,18 +1,7 @@
-## How Jobs are listed?
+## How job adverts are published
 
-Upon a job advert is posted successfully through the `JobPublishingService` it emits an `JobPublishedEvent` with the job related payload.
+The client's HRM system will trigger a call to the relevant api (/jobs) with the job details and API key.
 
-```
-{
-    job_reference_id:,
-    title:,
-    description:,
-    number_of_positions:,
-    status:
-}
-```
-After receiving this event the `JobListingService` will capture the event data and store this information in Elasticsearch database.
-
-### JobPublishedEvent flow
+### Job publishing flow
 
 ![jobpublishing-flow](./resources/job_publishing_flow.png)

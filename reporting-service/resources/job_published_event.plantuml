@@ -1,0 +1,25 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber 1.1
+
+participant "job-publishing-service" as JPS
+participant "reporting-service" as RS
+database kafka
+database Postgresql
+
+JPS -> kafka: Emit JobPublished Event
+note right
+{
+    job_reference_id:,
+    client_reference_id:,
+    title:,
+    description:,
+    number_of_positions:,
+    status:
+}
+end note
+kafka -> RS: Consume JobPublished Event
+RS -> Postgresql: Store the data
+
+@enduml

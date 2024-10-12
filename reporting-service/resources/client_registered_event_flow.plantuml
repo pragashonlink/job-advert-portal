@@ -1,0 +1,23 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber 1.1
+
+participant "client-registration-service" as CRS
+participant "reporting-service" as RS
+database kafka
+database Postgresql
+
+CRS -> kafka: Upon successful registration emit ClientRegistered event
+note right
+{
+    client_reference_id:,
+    name:,
+    country_code:,
+    currency_code:,
+}
+end note
+Kafka -> RS: reporting service will consume the ClientRegistered event
+RS -> Postgresql: reporting service will store this to the database
+
+@enduml

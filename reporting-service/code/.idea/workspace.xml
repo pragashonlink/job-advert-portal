@@ -21,7 +21,17 @@
         <task path="$PROJECT_DIR$">
           <activation />
         </task>
-        <projects_view />
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="finance" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
       </state>
     </system>
   </component>
@@ -47,34 +57,34 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.ClientRegisteredUseCaseIntegrationTest.should store client and create new exchange rate successfully when currency code doesn't exist already in db.executor": "Debug",
-    "Gradle.ClientRegisteredUseCaseTest.executor": "Run",
-    "Gradle.ClientRegisteredUseCaseTest.should store client and create new exchange rate successfully when currency code doesn't exist already in db.executor": "Run",
-    "Gradle.UpdateExchangeRateUseCaseTest.should update exchange rate successfully.executor": "Debug",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "commission-forecast-report",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/pragashrajarathnam/projects/personal/job-advert-portal/reporting-service/code/src/main/resources/db/migration",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.ClientRegisteredUseCaseIntegrationTest.should store client and create new exchange rate successfully when currency code doesn't exist already in db.executor&quot;: &quot;Debug&quot;,
+    &quot;Gradle.ClientRegisteredUseCaseTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ClientRegisteredUseCaseTest.should store client and create new exchange rate successfully when currency code doesn't exist already in db.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.UpdateExchangeRateUseCaseTest.should update exchange rate successfully.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;commission-forecast-report&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/pragashrajarathnam/projects/personal/job-advert-portal/reporting-service/code/src/main/resources/db/migration&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ],
-    "kotlin-gradle-user-dirs": [
-      "/Users/pragashrajarathnam/.gradle"
+    &quot;kotlin-gradle-user-dirs&quot;: [
+      &quot;/Users/pragashrajarathnam/.gradle&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
