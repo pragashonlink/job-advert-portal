@@ -66,12 +66,13 @@ Body: [Request Body](#job-post)
 
 API Response Statuses
 
-| Status   | Meaning        |  Description                          |  Schema                           |
-| -------  | ---------------| ------------------------------------- | --------------------------------- |
-| 201      | OK             | Interest accrual breakdown returned.  | [Job Post Response](#job-post)    |
-| 400      | BadRequest     | A validation error occurred           | [Error Response](#error-response) |
-| 401      | UnAuthorized   | Unauthorized                          | [Error Response](#error-response) |
-| 404      | NotFound       | Job not found                         | [Error Response](#error-response) |
+| Status | Meaning           |  Description                          |  Schema                           |
+|--------|-------------------| ------------------------------------- | --------------------------------- |
+| 201    | OK                | Interest accrual breakdown returned.  | [Job Post Response](#job-post)    |
+| 400    | BadRequest        | A validation error occurred           | [Error Response](#error-response) |
+| 401    | UnAuthorized      | Unauthorized                          | [Error Response](#error-response) |
+| 404    | NotFound          | Job not found                         | [Error Response](#error-response) |
+| 429    | Too many requests | Exceeded Rate Limit                   | [Error Response](#error-response) |
 
 CURL command
 
