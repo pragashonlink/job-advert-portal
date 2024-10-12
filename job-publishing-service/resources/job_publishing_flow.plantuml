@@ -1,0 +1,27 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber 1.1
+
+participant "client HRM system" as CHS
+participant "API Gateway" as AG
+participant "Lambda Authenticator" as LA
+participant "Dynamo DB" as Dynamo
+participant "job-publishing-service" as JPS
+database kafka
+database postgresql
+
+CHS -> AG: Gate keep the request to the job publishing service
+AG -> LA: Api gateway sends a request to LA to validate the API KEY and Rate limit
+LA -> Dynamo: Validate the api key and track the request for the day
+    note right
+        http status 429 when Rate limit exceeded
+        http status 403 when API key is invalid
+        else return 200
+    end note
+    return
+AG -> JPS: Forward request to service
+JPS -> postgresql: Store the job post into the db
+JPS -> kafka: Trigger event JobPublished
+
+@enduml

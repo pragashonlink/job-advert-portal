@@ -1,0 +1,24 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber 1.1
+
+participant "job-publishing-service" as JPS
+participant "job-listing-service" as JLS
+database kafka
+database Elasticsearch
+
+JPS -> kafka: Emit JobPublished Event 
+note right
+{
+    job_reference_id:,
+    title:,
+    description:,
+    number_of_positions:,
+    status:
+}
+end note
+kafka -> JLS: Consume JobPublished Event
+JLS -> Elasticsearch: Store and index the data in elasticsearch
+
+@enduml
