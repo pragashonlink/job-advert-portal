@@ -1,8 +1,12 @@
 ## Publish job advert API specification
 
+Open API Specification
+
+> [Open API Specification](./open-api-specification.yml)
+
 Base URL for the request to the API
 
-> https://example.com/api
+> https://client.jobportal.com
 
 Authentication
 
@@ -11,7 +15,7 @@ Authentication
 
 Versioning
 
-> Must be specified in the header X-API-Version: {VERSION_NO}
+> Must be specified in the URL. Like /api/v1/{resource-path}
 
 Content Type
 
@@ -29,16 +33,13 @@ Content Type
 
 The response to a request will contain either an error response or a payload in the content type that the endpoint accepts.
 
-| Field         | Type    |  Availability     |  Content                 |
-| ------------- | ------- | ----------------- | ------------------------ |
-| errorCode     | number  | Always present    | A unique error code      |
-| errorSource   | string  | Sometimes present | A human-readable message |
-| errorReason   | string  | Always present    | A human-readable message |
+| Field       | Type    | Availability   |  Content                 |
+|-------------| ------- |----------------| ------------------------ |
+| message     | string  | Always present | A human-readable message |
 
 #### Job Status {#job-status}
 - Pending
 - Published
-- Hidden
 
 #### JobPost {#job-post}
 | Name                | Type    |  Description     |
@@ -72,7 +73,7 @@ API Response Statuses
 | 400    | BadRequest        | A validation error occurred           | [Error Response](#error-response) |
 | 401    | UnAuthorized      | Unauthorized                          | [Error Response](#error-response) |
 | 404    | NotFound          | Job not found                         | [Error Response](#error-response) |
-| 429    | Too many requests | Exceeded Rate Limit                   | [Error Response](#error-response) |
+| 429    | Too many requests | Rate limit exceeded                   | [Error Response](#error-response) |
 
 CURL command
 
@@ -89,17 +90,56 @@ Body: [Request Body](#job-post)
 
 API Response Statuses
 
-| Status                | Meaning    |  Description     |  Schema                 |
-| ------------------  | ------- | ----------------- | ------------------------ |
-| 204        | OK  | Interest accrual breakdown returned.    | No Response      |
-| 400              | BadRequest  | A validation error occurred | [Error Response](#error-response) |
+| Status                | Meaning       |  Description     |  Schema                 |
+| ------------------  |---------------| ----------------- | ------------------------ |
+| 204        | No Content    |     | No Response      |
+| 400              | BadRequest    | A validation error occurred | [Error Response](#error-response) |
 | 401              | UnAuthorized  | Unauthorized | [Error Response](#error-response) |
-| 404              | Job Not Found  | NotFound | [Error Response](#error-response) |
+| 404              | Job Not Found | NotFound | [Error Response](#error-response) |
+| 429    | TooManyRequest | Rate limit exceeded | [Error Response](#error-response) |
 
 CURL command
 
 > [Update Job](./update_job_command.curl)
 
-Open API Speicification
+#### Delete job post
 
-> [Open API Specification](./open-api-specification.json)
+> DELETE /jobs/{job_id}
+
+Parameters
+
+Headers: [Request Headers](#request-headers) <br />
+
+API Response Statuses
+
+| Status | Meaning        | Description         |  Schema                 |
+|--------|----------------|---------------------| ------------------------ |
+| 204    | No Content     |                     | No Response      |
+| 401    | UnAuthorized   | Unauthorized        | [Error Response](#error-response) |
+| 404    | Job Not Found  | NotFound            | [Error Response](#error-response) |
+| 429    | TooManyRequest | Rate limit exceeded | [Error Response](#error-response) |
+
+CURL command
+
+> [Delete Job](./delete_job_command.curl)
+
+#### Read job post
+
+> GET /jobs/{job_id}
+
+Parameters
+
+Headers: [Request Headers](#request-headers) <br />
+
+API Response Statuses
+
+| Status | Meaning        | Description         |  Schema                 |
+|--------|----------------|---------------------| ------------------------ |
+| 200    | OK             | Job Details         | [Job Post Response](#job-post)       |
+| 401    | UnAuthorized   | Unauthorized        | [Error Response](#error-response) |
+| 404    | Job Not Found  | NotFound            | [Error Response](#error-response) |
+| 429    | TooManyRequest | Rate limit exceeded | [Error Response](#error-response) |
+
+CURL command
+
+> [Read Job](./read_job_command.curl)

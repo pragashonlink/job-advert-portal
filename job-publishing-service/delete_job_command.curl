@@ -1,0 +1,5 @@
+curl -X 'DELETE' \
+  'https://client.jobportal.com/api/jobs/{job_id}' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -H 'X-Api-Key: {API-KEY}'

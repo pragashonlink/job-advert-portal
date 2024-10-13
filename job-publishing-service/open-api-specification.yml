@@ -1,0 +1,190 @@
+openapi: '3.0.0'
+info:
+  version: '1.0.0'
+  title: 'Job Publication API'
+  description: Manage job posts
+
+paths:
+  /jobs/{jobId}:
+    parameters:
+      - name: jobId
+        description: The unique identifier of a job post
+        in: path
+        required: true
+        schema:
+          $ref: '#/components/schemas/jobId'
+    get:
+      summary: Read a job post
+      responses:
+        '200':
+          description: The job details corresponding to the provided `jobId`
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Job'
+        401:
+          description: Un authenticated the API Key is not valid
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        404:
+          description: No Job found for the provided `jobId`
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        429:
+          description: Too many requests, when the rate limit exceeded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        500:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      summary: Delete a job post
+      responses:
+        '204':
+          description: Delete the job post identified by the jobId
+        401:
+          description: Un authenticated the API Key is not valid
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        404:
+          description: No Job found for the provided `jobId`
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        429:
+          description: Too many requests, when the rate limit exceeded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        500:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    put:
+      summary: Update a job post
+      requestBody:
+        $ref: '#/components/schemas/Job'
+      responses:
+        '204':
+          description: Update the job post identified by the jobId
+        400:
+          description: Bad request body, one of the required fields not specified
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        401:
+          description: Un authenticated the API Key is not valid
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        404:
+          description: No Job found for the provided `jobId`
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        429:
+          description: Too many requests, when the rate limit exceeded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        500:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /jobs:
+    post:
+      summary: Create a job post
+      responses:
+        '201':
+          description: Create a job post
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Job'
+        400:
+          description: Bad request body, one of the required fields not specified
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        401:
+          description: Un authenticated the API Key is not valid
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        429:
+          description: Too many requests, when the rate limit exceeded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        500:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+components:
+  schemas:
+    jobId:
+      description: The unique identifier of a job, this is a UUID
+      type: string
+    Job:
+      type: object
+      required:
+        - id
+        - title
+        - description
+        - numberOfPositions
+        - status
+      properties:
+        id:
+          $ref: '#/components/schemas/jobId'
+        title:
+          type: string
+        description:
+          type: string
+        numberOfPositions:
+          type: number
+        type:
+          type: string
+          enum:
+            - pending
+            - published
+    Error:
+      type: object
+      required:
+        - message
+      properties:
+        message:
+          description: A human readable error message
+          type: string
+  securitySchemes:
+    ApiKey:
+      type: apiKey
+      in: header
+      name: X-Api-Key
+security:
+  - ApiKey: []
