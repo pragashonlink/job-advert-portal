@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: io.kotest:kotest-assertions-core-jvm:5.6.0" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="io.kotest" artifactId="kotest-assertions-core-jvm" version="5.6.0" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.kotest/kotest-assertions-core-jvm/5.6.0/5a9a77e73ac99fe02764b8352c47be79aa9c1892/kotest-assertions-core-jvm-5.6.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

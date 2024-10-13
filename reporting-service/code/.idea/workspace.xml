@@ -212,6 +212,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Gradle.ClientRegisteredUseCaseIntegrationTest.should store client and create new exchange rate successfully when currency code doesn't exist already in db" />
+      <item itemvalue="Gradle.ClientRegisteredUseCaseTest" />
+      <item itemvalue="Gradle.ClientRegisteredUseCaseTest.should store client and create new exchange rate successfully when currency code doesn't exist already in db" />
+      <item itemvalue="Gradle.UpdateExchangeRateUseCaseTest.should update exchange rate successfully" />
+      <item itemvalue="Spring Boot.FinanceApplication" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.ClientRegisteredUseCaseTest" />

@@ -51,8 +51,9 @@ This service allows clients to register with the application. Upon a successful 
 
 #### Technologies
 
-- Spring Boot
-- Kotlin
+- Node
+- Typescript
+- Express
 - Postgresql
 - K8S
 - Istio
@@ -70,8 +71,9 @@ The service which stores the job advertisements for each client. This has end po
 
 #### Technologies
 
-- Spring Boot
-- Kotlin
+- Node
+- Typescript
+- Express
 - Postgresql
 - K8S
 - Istio
@@ -88,8 +90,9 @@ Application service will allow the applicant to apply for a job advert. The appl
 
 #### Technologies
 
-- Spring Boot
-- Kotlin
+- Node
+- Typescript
+- Express
 - Postgresql
 - K8S
 - Istio
@@ -100,14 +103,15 @@ Application service will allow the applicant to apply for a job advert. The appl
 
 > MTLS 
 
-### 2.3.5 Forecasting Service
+### 2.3.5 Reporting Service
 
 Forecasting service is responsible for listening to events dispatched by other services and storing data for reporting purposes. This service is responsible for calculating the forecast on how much future commission the platform is supposed to earn.
 
 #### Technologies
 
-- Spring Boot
-- Kotlin
+- Node
+- Typescript
+- Express
 - Postgresql
 - K8S
 - Istio
@@ -125,8 +129,9 @@ Notification service responsible for dispatching emails, sms, etc... by respondi
 
 #### Technologies
 
-- Spring Boot
-- Kotlin
+- Node
+- Typescript
+- Express
 - Postgresql
 - K8S
 - Istio
@@ -149,25 +154,56 @@ This application will be hosted on AWS cloud infrastructure. We will host the ba
 
 ### 3.1.1 Backend
 
-![frontend-deployment-diagram](./resources/deployment-diagram-backend.png)
+![backend-deployment-diagram](./resources/deployment-diagram-backend.png)
 
 ## 3.2 Infrastructure Components
 
 ### 3.2.1 Region
+The application will be hosted in the `eu-west-2` region as the product will be launched in UK. The application infrastructure will be hosted in multiple AZs in order to be fault tolerent.
+
 ### 3.2.2 VPC
+All the services EKS, MSK, RDS, Dynamodb, OpenSearch and Lambda will all run inside a VPC within private subnet across two availability zones.
+
 ### 3.2.3 EKS
+The backend services will run on K8S and will be hosted on managed `K8S` service of AWS named `EKS`. In addition within the cluster will be using `Istio` service mesh. The cluster will be configured to aggregated application, network logs. TLS termination will happen at the API gateway but within EKS service to service communication will happen using `MTLS` provided by `Istio`. The cluster will be integrated with AWS Secrets manager to update POD environments with the secret values as Environment Variables near real time. We can use Kubernetes Secrets Store CSI Driver for this purpose and each pod should be able to volume mount the secret.
+
 ### 3.2.4 Istio
+
 ### 3.2.5 API Gateway
+We will AWS API Gateway. We will have a gateway for traffic coming from our front end application and another for our third party integrations.
+
+#### 3.2.5.1 Third party integration API Gateway
+This gateway will route through the requests from third party HRM systems. It is used to shield other end points from getting exposed to the HRM system. It will implement rate limiting and API Key validation using a Lambda function.
+
+API Key Validator Service
+This service will be forwarded the request to validate the API Key and upon validation it will return Http status code `200` or `403`. The API Gateway will forward this response to the up stream. This service will also listen to `ClientRegistered` to fetch the Hashed API key which will be stored in a DynamoDB instance for fast and reliable access.
+
+Rate Limiter Service
+The rate limiter service will receive a request and it keeps track of all the requests within the current day in a Redis DB instance. The data in Redis is reset every day. The service will return a http status `429` upon the allowed limit is exceeded by a service.
+
+Diagram
+![thirdparty-api-gateway-diagram](./resources/api-gateway-third-party-integrations.png)
+
+#### 3.2.5.2 Request API Gateway
+This will route all the requests to the EKS cluster upon a valid response from `AWS Cognito` service. When it finds that the user is not authenticated it will return a `401`. The front end will redirect the user to the cognito to Authenticate. Upon successful authentication the subsequent requests to the backend will receive the access token which is a JWT token. The API Gateway will validate this access token with AWS Cognito before passing the request to the EKS cluster. The request from the API Gateway will go to the VPC link and from their it will be forwarded to the Network Load Balancer of the service. The NLB knows which port to call and forward the request to.
+
+Diagram
+![thirdparty-api-gateway-diagram](./resources/api-gateway-request.png)
+
 ### 3.2.6 S3
-### 3.2.7 Load Balancers
+
+
+### 3.2.7 Network Load Balancers
 
 # 4. Database Management
 
-## 4.1 Service Name
-### 4.1.1 Database Type
-### 4.1.2 Tables/Collections
+- Service - RDS Cluster
+- Database Type - Postgresql
+- Mode - Multi Availability Zone mode
 
-# 5. Scalability & Fault Tolerence
+# 5. Scalability & Fault Tolerance
+The database is configured to run in multi AZs mode. The primary instance will serve the requests and the data is replicated to the secondary instance. Upon a failure in the primary `Availability Zone` AWS will seamlessly switch the traffic to the secondary `Availability Zone`.
+
 ## 5.1 Scaling Strategies
 ### 5.1.1 Horizontal Scaling - Explain how horizontal scaling will be done
 

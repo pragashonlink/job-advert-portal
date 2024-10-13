@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: org.testcontainers:r2dbc:1.19.8" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="org.testcontainers" artifactId="r2dbc" version="1.19.8" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.testcontainers/r2dbc/1.19.8/73f24843273a64d5574a06b681f00e168735b41a/r2dbc-1.19.8.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
