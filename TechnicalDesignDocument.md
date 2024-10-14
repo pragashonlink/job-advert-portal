@@ -21,7 +21,7 @@ This application is going to be designed as a microservice application. We see t
 
 ## 2.2 Highlevel Architecture Diagram
 
-![architecture-diagram](./resources/architecture-diagram.png)
+![architecture-diagram](./resources/highlevel-architecture-diagram.png)
 
 ## 2.3 Microservice Breakdown
 
@@ -43,7 +43,6 @@ HTTPS 2.0 / TLS 1.0
 
 #### Security
 
-
 ### 2.3.2 Client Registration Service
 This service is used by clients to register, rotate their API key.
 
@@ -58,10 +57,6 @@ This service allows clients to register with the application. Upon a successful 
 - K8S
 - Istio
 - Docker
-
-#### Communication Protocols
-
-MTLS 
 
 #### Security
 
@@ -80,10 +75,6 @@ The service which stores the job advertisements for each client. This has end po
 - Docker
 - Kafka
 
-#### Communication Protocols
-
-> MTLS 
-
 ### 2.3.4 Application Service
 
 Application service will allow the applicant to apply for a job advert. The applicant can submit his resume and respond job specific questions such as expected salary, contact email, etc...
@@ -98,10 +89,6 @@ Application service will allow the applicant to apply for a job advert. The appl
 - Istio
 - Docker
 - Kafka
-
-#### Communication Protocols
-
-> MTLS 
 
 ### 2.3.5 Reporting Service
 
@@ -118,11 +105,6 @@ Forecasting service is responsible for listening to events dispatched by other s
 - Docker
 - Kafka
 
-#### Communication Protocols
-
-> MTLS 
-
-
 ### 2.3.6 Notification Service
 
 Notification service responsible for dispatching emails, sms, etc... by responding to events from other services.
@@ -138,10 +120,6 @@ Notification service responsible for dispatching emails, sms, etc... by respondi
 - Docker
 - Kafka
 
-#### Communication Protocols
-
-> MTLS 
-
 # 3. Deployment Overview
 
 This application will be hosted on AWS cloud infrastructure. We will host the backend services in K8S cluster (EKS). Using kafka gives us the needed control, security and scalability. We will Istio service mesh that provides a uniform way to connect, secure, control, and observe microservices.
@@ -155,6 +133,24 @@ This application will be hosted on AWS cloud infrastructure. We will host the ba
 ### 3.1.1 Backend
 
 ![backend-deployment-diagram](./resources/deployment-diagram-backend.png)
+
+## 3.2 Important Sequence Diagrams
+
+Client Registration Flow
+
+![client-registration-sequence-diagram](./resources/client-registration-sequence-diagram.png)
+
+Job Publication Flow
+
+![job-publication-sequence-diagram](./resources/job-post-sequence-diagram.png)
+
+Job Application Flow
+
+![job-applicaton-sequence-diagram](./resources/submit-application-sequence.png)
+
+Exchange Rate Integration Flow
+
+![exchange-rate-integration-sequence-diagram](./resources/exchange-rate-scheduler.png)
 
 ## 3.2 Infrastructure Components
 
@@ -192,8 +188,6 @@ Diagram
 
 ### 3.2.6 S3
 
-
-### 3.2.7 Network Load Balancers
 
 # 4. Database Management
 

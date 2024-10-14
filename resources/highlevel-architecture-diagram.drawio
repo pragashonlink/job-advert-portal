@@ -1,0 +1,150 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36" version="24.7.17">
+  <diagram name="Page-1" id="QhjiuwCmCMislij0Kd8W">
+    <mxGraphModel dx="1026" dy="650" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="mXzaNVFmR2rs_p4AUFhK-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="110" width="600" height="540" as="geometry" />
+        </mxCell>
+        <mxCell id="mXzaNVFmR2rs_p4AUFhK-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="mXzaNVFmR2rs_p4AUFhK-2" target="mXzaNVFmR2rs_p4AUFhK-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="mXzaNVFmR2rs_p4AUFhK-2" value="User" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="227.5" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="mXzaNVFmR2rs_p4AUFhK-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="mXzaNVFmR2rs_p4AUFhK-3" target="mXzaNVFmR2rs_p4AUFhK-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="mXzaNVFmR2rs_p4AUFhK-3" value="Client HRM System" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="15" y="362.5" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="mXzaNVFmR2rs_p4AUFhK-40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="mXzaNVFmR2rs_p4AUFhK-4" target="mXzaNVFmR2rs_p4AUFhK-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="mXzaNVFmR2rs_p4AUFhK-4" value="API Gateway" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="190" y="362.5" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="mXzaNVFmR2rs_p4AUFhK-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.25;entryY=1;entryDx=0;entryDy=0;exitX=0.35;exitY=0.02;exitDx=0;exitDy=0;exitPerimeter=0;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="230" y="233.5" as="sourcePoint" />
+            <mxPoint x="230" y="97" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mXzaNVFmR2rs_p4AUFhK-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="mXzaNVFmR2rs_p4AUFhK-5" target="mXzaNVFmR2rs_p4AUFhK-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="mXzaNVFmR2rs_p4AUFhK-5" value="API Gateway" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="190" y="232.5" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="mXzaNVFmR2rs_p4AUFhK-8" value="Identity Service" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="188" y="37" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="mXzaNVFmR2rs_p4AUFhK-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;" edge="1" parent="1" source="mXzaNVFmR2rs_p4AUFhK-11" target="mXzaNVFmR2rs_p4AUFhK-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="mXzaNVFmR2rs_p4AUFhK-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;" edge="1" parent="1" source="mXzaNVFmR2rs_p4AUFhK-11" target="mXzaNVFmR2rs_p4AUFhK-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="mXzaNVFmR2rs_p4AUFhK-44" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;" edge="1" parent="1" source="mXzaNVFmR2rs_p4AUFhK-11" target="mXzaNVFmR2rs_p4AUFhK-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="mXzaNVFmR2rs_p4AUFhK-45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;" edge="1" parent="1" source="mXzaNVFmR2rs_p4AUFhK-11" target="mXzaNVFmR2rs_p4AUFhK-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="mXzaNVFmR2rs_p4AUFhK-49" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;" edge="1" parent="1" source="mXzaNVFmR2rs_p4AUFhK-11" target="mXzaNVFmR2rs_p4AUFhK-46">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="mXzaNVFmR2rs_p4AUFhK-11" value="Job Portal Application" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="299.5" width="100" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="mXzaNVFmR2rs_p4AUFhK-12" value="Client Registration Service" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="511" y="130" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="mXzaNVFmR2rs_p4AUFhK-13" value="Client Db" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+          <mxGeometry x="690" y="127" width="40" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="mXzaNVFmR2rs_p4AUFhK-14" value="Job Publication Service" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="511" y="207.5" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="mXzaNVFmR2rs_p4AUFhK-15" value="Job Application Service" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="511" y="371" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="mXzaNVFmR2rs_p4AUFhK-16" value="Jobs DB" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+          <mxGeometry x="690" y="204.5" width="40" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="mXzaNVFmR2rs_p4AUFhK-17" value="Application DB" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+          <mxGeometry x="690" y="368" width="40" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="mXzaNVFmR2rs_p4AUFhK-18" value="Reporting Service" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="511" y="453.5" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="mXzaNVFmR2rs_p4AUFhK-19" value="Notification Service" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="511" y="533" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="mXzaNVFmR2rs_p4AUFhK-20" value="Reporting Db" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+          <mxGeometry x="690" y="445.5" width="40" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="mXzaNVFmR2rs_p4AUFhK-21" value="Notification Db" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+          <mxGeometry x="690" y="523" width="40" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="mXzaNVFmR2rs_p4AUFhK-22" value="Event Broker" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="782" y="131" width="40" height="469" as="geometry" />
+        </mxCell>
+        <mxCell id="mXzaNVFmR2rs_p4AUFhK-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0;entryDx=0;entryDy=15;entryPerimeter=0;exitX=1;exitY=0.25;exitDx=0;exitDy=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="621" y="154.5" as="sourcePoint" />
+            <mxPoint x="690" y="154" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="660" y="155" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mXzaNVFmR2rs_p4AUFhK-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0;entryDx=0;entryDy=15;entryPerimeter=0;exitX=1;exitY=0.25;exitDx=0;exitDy=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="621" y="236" as="sourcePoint" />
+            <mxPoint x="690" y="235.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mXzaNVFmR2rs_p4AUFhK-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0;entryDx=0;entryDy=15;entryPerimeter=0;exitX=1;exitY=0.25;exitDx=0;exitDy=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="621" y="392.5" as="sourcePoint" />
+            <mxPoint x="690" y="392" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mXzaNVFmR2rs_p4AUFhK-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0;entryDx=0;entryDy=22.5;entryPerimeter=0;exitX=1;exitY=0.25;exitDx=0;exitDy=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="621" y="478" as="sourcePoint" />
+            <mxPoint x="690" y="478" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mXzaNVFmR2rs_p4AUFhK-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0;entryDx=0;entryDy=22.5;entryPerimeter=0;exitX=1;exitY=0.25;exitDx=0;exitDy=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="621" y="556.5" as="sourcePoint" />
+            <mxPoint x="690" y="556.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mXzaNVFmR2rs_p4AUFhK-38" value="Api Key Validation Service" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="170" y="663" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="mXzaNVFmR2rs_p4AUFhK-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="mXzaNVFmR2rs_p4AUFhK-4" target="mXzaNVFmR2rs_p4AUFhK-38">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="230" y="540" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mXzaNVFmR2rs_p4AUFhK-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.64;entryDx=0;entryDy=0;entryPerimeter=0;dashed=1;" edge="1" parent="1" source="mXzaNVFmR2rs_p4AUFhK-11" target="mXzaNVFmR2rs_p4AUFhK-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="mXzaNVFmR2rs_p4AUFhK-46" value="Job Listing Service" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="511" y="297.5" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="mXzaNVFmR2rs_p4AUFhK-47" value="Job Listing DB" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+          <mxGeometry x="690" y="292.5" width="40" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="mXzaNVFmR2rs_p4AUFhK-48" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="mXzaNVFmR2rs_p4AUFhK-46" target="mXzaNVFmR2rs_p4AUFhK-47">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
