@@ -11,6 +11,9 @@
 ## Swagger ui for testing
 Spin up the project and access `http://localhost:8080/documentation`
 
+## Test data
+By default if you run the project in `local` profile then we have data seeded automatically. You can test the end point in Swagger URL
+
 ### APPLICATION_SUBMITTED Event schema
 
 ```
