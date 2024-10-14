@@ -10,7 +10,7 @@ import java.time.LocalDateTime
 class ExchangeRateScheduler (
     private val updateExchangeRateUseCase: UpdateExchangeRateUseCase
 ) {
-    @Scheduled(cron="0 48 19 * * *")
+    @Scheduled(cron="0 1 0 * * *")
     fun updateExchangeRate() {
         println("Cron Task - Current Time: ${LocalDateTime.now()}")
         runBlocking {
