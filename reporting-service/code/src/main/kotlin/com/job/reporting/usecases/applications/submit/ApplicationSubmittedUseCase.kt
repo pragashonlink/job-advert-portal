@@ -38,6 +38,8 @@ class ApplicationSubmittedUseCase(
                 forecastCommission = forecastCommissionCalculationService.calculate(job.id, job.numberOfVacancies)
             )
         )
+
+        println("application saved and commission updated successfully")
     }
 
 }

@@ -16,6 +16,7 @@ import org.springframework.context.annotation.Profile
 import org.springframework.stereotype.Component
 import java.math.BigDecimal
 import java.time.Instant
+import java.util.*
 import kotlin.random.Random
 
 @Profile("local")
@@ -25,8 +26,7 @@ class DataSeeder(
     private val clientRepository: ClientRepository,
     private val jobRepository: JobRepository,
     private val applicationRepository: ApplicationRepository,
-    private val applicationSubmittedUseCase: ApplicationSubmittedUseCase,
-//    private val logger: Logger
+    private val applicationSubmittedUseCase: ApplicationSubmittedUseCase
 ) : CommandLineRunner {
     override fun run(vararg args: String?) {
         clearDb()
@@ -88,7 +88,7 @@ class DataSeeder(
             data.add(
                 ClientEntity(
                     name = randomString(15),
-                    clientReferenceId = randomString(10),
+                    clientReferenceId = UUID.randomUUID().toString(),
                     countryCode = countryCodeCurrencyMapping[currencyCode]!!,
                     exchangeRateId = exchangeRates.first { it.currencyCode.equals(currencyCode)}.id!!,
                     createdAt = Instant.now()
@@ -107,7 +107,7 @@ class DataSeeder(
         for (i in 1..50) {
             data.add(
                 JobEntity(
-                    jobReferenceId = randomString(10),
+                    jobReferenceId = UUID.randomUUID().toString(),
                     title = randomString(15),
                     clientId = clients.random().id!!,
                     numberOfVacancies = Random.nextInt(1,5),
@@ -127,7 +127,7 @@ class DataSeeder(
         for (i in 1..50) {
             applicationSubmittedUseCase.execute(
                 ApplicationSubmittedEvent(
-                    applicationReferenceId = randomString(10),
+                    applicationReferenceId = UUID.randomUUID().toString(),
                     jobReferenceId = jobs.random().jobReferenceId,
                     expectedSalary = Random.nextDouble(10000.0, 1000000.0).toBigDecimal()
                 )

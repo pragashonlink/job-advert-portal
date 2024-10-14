@@ -37,3 +37,10 @@ springdoc:
 integrations:
   exchange-rate:
     baseUrl: https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies
+
+kafka:
+  client-id-prefix: ${name}
+  topic:
+    application: job.application
+  group-id:
+    reporting: reporting_service
