@@ -195,6 +195,11 @@ Diagram
 - Database Type - Postgresql
 - Mode - Multi Availability Zone mode
 
+## 4.1 Important Tables and Relationships
+
+![database-diagram](./resources/database-diagram.png)
+
+
 # 5. Scalability & Fault Tolerance
 The database is configured to run in multi AZs mode. The primary instance will serve the requests and the data is replicated to the secondary instance. Upon a failure in the primary `Availability Zone` AWS will seamlessly switch the traffic to the secondary `Availability Zone`.
 
