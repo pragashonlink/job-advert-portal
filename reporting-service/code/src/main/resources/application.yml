@@ -25,9 +25,15 @@ spring:
     consumer:
       auto-offset-reset: latest
       group-id: ${name}
+
 springdoc:
   swagger-ui:
     path: /documentation
     enabled: true
   api-docs:
     enabled: true
+
+#external client configurations
+integrations:
+  exchange-rate:
+    baseUrl: https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies
