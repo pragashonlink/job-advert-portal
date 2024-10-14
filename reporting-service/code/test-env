@@ -1,0 +1,2 @@
+export PSQL_URL=localhost:5432
+export PSQL_PASSWORD=SuperSecret
