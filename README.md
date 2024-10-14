@@ -4,7 +4,8 @@
 
 ### Client API for posting jobs
 
-[Job Posting API](./job-publishing-service/README.md)
+- [Job Posting API](./job-publishing-service/README.md)
+- [Open API Specification](./job-publishing-service/open-api-specification.yml)
 
 ### Commission Forecast Project
 
