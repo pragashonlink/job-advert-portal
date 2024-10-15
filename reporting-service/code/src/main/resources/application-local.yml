@@ -1,0 +1,6 @@
+spring:
+  r2dbc:
+    password: SuperSecret
+
+  flyway:
+    password: SuperSecret

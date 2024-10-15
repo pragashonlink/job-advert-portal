@@ -1,0 +1,46 @@
+application:
+  database:
+    username: job_reporting_user
+    name: job_reporting_db
+
+spring:
+  application:
+    name: job-reporting
+  main:
+    web-application-type: reactive
+  r2dbc:
+    url: r2dbc:postgresql://${PSQL_URL}/job_reporting_db
+    username: job_reporting_user
+    pool:
+      max-size: 10
+      min-idle: 3
+  data:
+    r2dbc:
+      repositories:
+        enabled: true
+  flyway:
+    user: job_reporting_user
+    url: jdbc:postgresql://\${PSQL_URL}/job_reporting_db
+  kafka:
+    consumer:
+      auto-offset-reset: latest
+      group-id: ${name}
+
+springdoc:
+  swagger-ui:
+    path: /documentation
+    enabled: true
+  api-docs:
+    enabled: true
+
+#external client configurations
+integrations:
+  exchange-rate:
+    baseUrl: https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies
+
+kafka:
+  client-id-prefix: ${name}
+  topic:
+    application: job.application
+  group-id:
+    reporting: reporting_service
